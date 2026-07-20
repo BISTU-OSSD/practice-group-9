@@ -1,0 +1,22 @@
+/* 定义统一的色彩与布局基准，作为团队协作的“视觉契约” */
+:root {
+    --primary-color: #2563eb;       /* 主题蓝色 */
+    --text-primary: #1e293b;        /* 主文本色（深灰） */
+    --text-secondary: #64748b;      /* 次要文本色（浅灰） */
+    --bg-primary: #ffffff;          /* 页面背景（白） */
+    --bg-secondary: #f8fafc;        /* 卡片背景（灰白） */
+    --border-color: #e2e8f0;        /* 边框色 */
+    --max-width: 900px;             /* 简历最大宽度 */
+    --radius: 8px;                  /* 圆角大小 */
+    --transition: all 0.3s ease;    /* 动效过渡时间 */
+}
+
+/* 简易的暗黑模式（Dark Mode）变量，由成员 4 的 JS 脚本触发 */
+:root[data-theme="dark"] {
+    --primary-color: #3b82f6;
+    --text-primary: #f1f5f9;
+    --text-secondary: #94a3b8;
+    --bg-primary: #0f172a;
+    --bg-secondary: #1e293b;
+    --border-color: #334155;
+}
