@@ -8,10 +8,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const applyTheme = (theme) => {
     if (theme === 'dark') {
       root.setAttribute('data-theme', 'dark');
-      toggleBtn.textContent = '亮色模式';
+      toggleBtn.textContent = '亮色模式'; // 暗黑模式下显示“切亮色”
     } else {
       root.removeAttribute('data-theme');
-      toggleBtn.textContent = '暗色模式';
+      toggleBtn.textContent = '暗色模式';  // 亮色模式下显示“切暗色”
     }
     localStorage.setItem('theme', theme);
   };
