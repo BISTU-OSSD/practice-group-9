@@ -20,3 +20,9 @@
     --bg-secondary: #1e293b;
     --border-color: #334155;
 }
+/* 暗黑模式覆写全局变量 */
+[data-theme="dark"] {
+  --bg-primary: #121212;
+  --text-primary: #f0f0f0;
+  --text-secondary: #cccccc;
+}
