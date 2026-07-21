@@ -1,0 +1,97 @@
+/* ============================================
+   responsive.css — 移动端响应式样式表
+   断点：max-width: 768px
+   目标：单列垂直布局，无溢出，无水平滚动
+   ============================================ */
+
+/* ── 针对手机端窄屏幕（≤768px）的样式自适应适配 ── */
+@media (max-width: 768px) {
+
+  /* ===== 1. 全局溢出控制 ===== */
+  html, body {
+    overflow-x: hidden;
+    width: 100%;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+  }
+
+  /* ===== 2. 主容器：安全边距 + 全宽 ===== */
+  .resume-container {
+    margin: 1rem;
+    padding: 1rem;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* ===== 3. Hero 区域：垂直居中，单列排列 ===== */
+  .section-hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  /* ===== 4. 联系信息：垂直堆叠 ===== */
+  .hero-contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.3rem;
+    width: 100%;
+  }
+
+  /* ===== 5. 头像：正圆 + 防拉伸 ===== */
+  #hero-section img,
+  .avatar,
+  .profile-img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    max-width: 100%;
+    display: block;
+  }
+
+  /* ===== 6. 教育卡片：垂直排列 ===== */
+  .edu-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* ===== 7. 技能条：全宽适配 ===== */
+  .skill-bar,
+  .progress-bar {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* ===== 8. 全局图片防溢出 ===== */
+  img,
+  video,
+  iframe,
+  svg {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* ===== 9. 表格/列表：全宽适配 ===== */
+  table,
+  ul,
+  ol {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* ===== 10. 深色模式变量兼容 ===== */
+  .skill-bg,
+  .progress-bg {
+    background-color: var(--border-color, #f1f5f9);
+  }
+}
