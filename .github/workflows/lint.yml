@@ -1,0 +1,34 @@
+# 1. 自动化流水线名称
+name: HTML Linter CI
+
+# 2. 触发条件：当有代码推送（push）或提交合并请求（pull_request）至 main 分支时自动触发
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+# 3. 运行环境与任务定义
+jobs:
+  htmlhint:
+    # 指定运行在 GitHub 托管的最新的 Ubuntu 虚拟机环境
+    runs-on: ubuntu-latest
+    
+    steps:
+    # 第一步：将远程仓库的代码拉取拉取（Checkout）到虚拟机中
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    # 第二步：在虚拟机中搭建并安装 Node.js 环境（版本18）
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: 18
+
+    # 第三步：在虚拟机中使用 npm 全局安装 HTMLHint 静态检查工具
+    - name: Install HTMLHint
+      run: npm install -g htmlhint
+
+    # 第四步：执行语法检查命令，扫描 src 文件夹下所有的 .html 文件
+    - name: Run HTMLHint Check
+      run: htmlhint "src/**/*.html"
